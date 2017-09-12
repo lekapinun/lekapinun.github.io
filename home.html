@@ -1,0 +1,222 @@
+<html>
+    
+    <head>
+        <title> Lung Cancer Detector </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/w3.css">
+        <script src="jquery-3.2.1/jquery.min.js"></script>
+        <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <style> 
+        input[type=text] {
+            width: 60%;
+            height: 40px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url("https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-512.png");
+            background-position: 5px 5px; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            background-size: auto 25;
+        }
+
+        .pagination {
+            display: inline-block;
+            margin-Top: -10px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .pagination a.active {
+            background-color: #2b98f0;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+    </style>
+    
+    <body>
+        <div class="w3-bar w3-black">
+            <a href="#" class="w3-bar-item w3-button w3-mobile">Lung cancer Detector</a>
+            <a href="#" class="w3-bar-item w3-button w3-mobile">Home</a>
+            <a href="#" class="w3-bar-item w3-button w3-mobile">About us</a>
+            <div class="w3-dropdown-hover w3-green w3-right w3-mobile">
+                <button class="w3-button" ><span class="glyphicon glyphicon-user"></span> สรศักดิ์<span class="caret" style ="margin-left:10px"></span>  </button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4" style="right:0">
+                  <a href="#" class="w3-bar-item w3-button">Edit Profile</a>
+                  <a href="#" class="w3-bar-item w3-button">Change Password</a>
+                  <a href="#" class="w3-bar-item w3-button">Report Problem</a>
+                </div>
+            </div>
+        </div>
+        <div class="w3-row" style="padding-Top:30px;">
+            <div class="w3-col m3 l3">
+                <center>
+                    <button class="w3-button w3-blue w3-round-large"> + UPLOAD</button>
+                </center>
+            </div>
+            <div class="w3-col m8 l8" style="display: inline-block">
+                <center>
+                    <input type="text" name="search" placeholder="Search..">
+                </center>
+            </div>
+        </div>
+        <div class="container" style="margin-Top:30px;width:90%" >
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Patient's name</th>
+                        <th>Date</th>
+                        <th>Prediction</th>
+                        <th>Fact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="center">
+                            <div class="w3-container">
+                                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-white"><span class="glyphicon glyphicon-search"></span></button>
+                                <div id="id01" class="w3-modal">
+                                    <div class="w3-modal-content">
+                                    <div class="w3-container">
+                                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                        <img src="image/JPCLN001_Adjust.png" style="height:500">
+                                    </div>
+                                    </div>
+                            </div>
+                            </div>
+                        </td>
+                        <td>John Norwom</td>
+                        <td>14/09/2017</td>
+                        <td>Yes</td>
+                        <td>
+                            <center>
+                                <button class="w3-button w3-red w3-round" style="height:20px;font-size:10;padding-Top:3">Yes</button>
+                                <button class="w3-button w3-blue w3-round" style="height:20px;font-size:10;padding-Top:3">No</button>
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center"><span class="glyphicon glyphicon-search"></span></td>
+                        <td>Mary Marron</td>
+                        <td>14/01/2017</td>
+                        <td>Yes</td>
+                        <td>
+                            <center>
+                                <button class="w3-button w3-red w3-round" style="height:20px;font-size:10;padding-Top:3">Yes</button>
+                                <button class="w3-button w3-blue w3-round" style="height:20px;font-size:10;padding-Top:3">No</button>
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center"><span class="glyphicon glyphicon-search"></span></td>
+                        <td>July Jissy</td>
+                        <td>24/09/2017</td>
+                        <td>No</td>
+                        <td>
+                            <center>
+                                <button class="w3-button w3-red w3-round" style="height:20px;font-size:10;padding-Top:3">Yes</button>
+                                <button class="w3-button w3-blue w3-round" style="height:20px;font-size:10;padding-Top:3">No</button>
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center"><span class="glyphicon glyphicon-search"></span></td>
+                        <td>Chris Cool</td>
+                        <td>01/09/2016</td>
+                        <td>Yes</td>
+                        <td align="center" >No</td>
+                    </tr>
+                    <tr>
+                        <td align="center"><span class="glyphicon glyphicon-search"></span></td>
+                        <td>Thomas Sammuku</td>
+                        <td>14/10/2017</td>
+                        <td>Yes</td>
+                        <td align="center" >Yes</td>
+                    </tr>
+                    <tr>
+                        <td align="center"><span class="glyphicon glyphicon-search"></span></td>
+                        <td>Alex Xexy</td>
+                        <td>20/09/2017</td>
+                        <td>No</td>
+                        <td>
+                            <center>
+                                <button class="w3-button w3-red w3-round" style="height:20px;font-size:10;padding-Top:3">Yes</button>
+                                <button class="w3-button w3-blue w3-round" style="height:20px;font-size:10;padding-Top:3">No</button>
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center"><span class="glyphicon glyphicon-search"></span></td>
+                        <td>Tonny Nyni</td>
+                        <td>14/05/2017</td>
+                        <td>Yes</td>
+                        <td align="center" >Yes</td>
+                    </tr>
+                    <tr>
+                        <td align="center"><span class="glyphicon glyphicon-search"></span></td>
+                        <td>Jessabel Ronny</td>
+                        <td>24/03/2017</td>
+                        <td>Yes</td>
+                        <td>
+                            <center>
+                                <button class="w3-button w3-red w3-round" style="height:20px;font-size:10;padding-Top:3">Yes</button>
+                                <button class="w3-button w3-blue w3-round" style="height:20px;font-size:10;padding-Top:3">No</button>
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center"><span class="glyphicon glyphicon-search"></span></td>
+                        <td>Cucar Corre</td>
+                        <td>14/09/2015</td>
+                        <td>Yes</td>
+                        <td align="center" >Yes</td>
+                    </tr>
+                    <tr>
+                        <td align="center"><span class="glyphicon glyphicon-search"></span></td>
+                        <td>Tartes Verde</td>
+                        <td>10/02/2017</td>
+                        <td>No</td>
+                        <td>
+                            <center>
+                                <button class="w3-button w3-red w3-round" style="height:20px;font-size:10;padding-Top:3">Yes</button>
+                                <button class="w3-button w3-blue w3-round" style="height:20px;font-size:10;padding-Top:3">No</button>
+                            </center>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align: right;">
+                <div class="pagination" >
+                    <a href="#">&laquo;</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+    </html>
+
+    
